@@ -1,17 +1,17 @@
 {
   "name": "ember-stylish-buttons",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Some fresh styles & hover effects for the modern button.",
   "keywords": [
     "ember-addon"
   ],
   "license": "MIT",
-  "author": "",
+  "author": "Rajasegar Chandran",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": "https://github.com/rajasegar/ember-stylish-buttons",
   "scripts": {
     "build": "ember build",
     "start": "ember server",
