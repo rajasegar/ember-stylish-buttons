@@ -1,0 +1,1 @@
+export { default } from 'ember-stylish-buttons/components/stylish-button';

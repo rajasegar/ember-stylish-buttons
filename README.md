@@ -1,13 +1,99 @@
 # ember-stylish-buttons
 
-This README outlines the details of collaborating on this Ember addon.
+[![Build Status](https://travis-ci.org/rajasegar/ember-stylish-buttons.svg?branch=master)](https://travis-ci.org/rajasegar/ember-stylish-buttons) 
+[![npm](https://img.shields.io/npm/dm/ember-stylish-buttons.svg)](https://www.npmjs.com/package/ember-stylish-buttons)
+[![npm version](http://img.shields.io/npm/v/ember-stylish-buttons.svg?style=flat)](https://npmjs.org/package/ember-stylish-buttons "View this project on npm")
+[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+
+
+Some fresh styles & hover effects for the modern Ember button.
+
+A collection of fresh button styles and effects for your Ember buttons. 
+We use CSS transitions and pseudo-elements for most of the effects.
+
+Drawing a great amount of inspiration from this Codrops [article](https://tympanus.net/codrops/2015/02/26/inspiration-button-styles-effects/)
+
+## Demo
+[Demo](http://ember-stylish-buttons.surge.sh)
+
+<img src="https://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/uploads/2015/02/ButtonStyle_Itzel.gif"/>
 
 ## Installation
+```shell
+ember install ember-stylish-buttons
+```
 
-* `git clone <repository-url>` this repository
-* `cd ember-stylish-buttons`
-* `npm install`
-* `bower install`
+## Usage
+```hbs
+{{stylish-button type="winona" border="thin" shape="round-s"  text="Open Project"}}
+
+{{#stylish-button type="wayra" border="thick" upperCase=true size="s" }}Remove{{/stylish-button}}
+
+{{#stylish-button type="isi" textWidth="thick" upperCase=true size="s"}}
+  <i class="button__icon icon icon-box"></i><span>Archive</span>
+{{/stylish-button}}
+```
+
+## Properties
+The **stylish-button** component takes the following list of properties to modify the styles and apperance of the button.
+
+* type
+This parameter controls the overall style of the buttons.
+Please find below the list of values it can take from the **Styles** section.
+
+* size
+This parameter controls the size of the button.
+Possible values include:
+- s => small
+- m => medium
+- l => large
+
+* textWidth
+This parameter controls the bold property of the text in the button.
+Possible values include:
+- thin
+- thick
+- medium
+
+* border
+This parameter controls the border thickness of the button.
+Possible values include:
+- thin
+- thick
+
+* upperCase
+This parameter transforms the button text to uppercase.
+Default value is **false**
+
+* shape
+This parameter transforms the button to a pill shape with various border-radius dimensions.
+Possible values include:
+- round-s
+- round-l
+- round-m
+
+## Styles
+Ember stylish buttons come with about 18 different styles for button. 
+Just give any one of the following values for the **type** attribute of the component.
+- winona
+- ujarak
+- wayra
+- tamaya
+- rayen
+- pipaluk
+- moema
+- isi
+- aylen
+- saqui
+- wapasha
+- nuka
+- antiman
+- itzel
+- naira
+- quidel
+- sacnite
+- shikoba
+
 
 ## Running
 
