@@ -35,6 +35,9 @@ export default Ember.Component.extend({
   }),
   buttonTextWidth: computed('textWidth', function() {
     return this.get('textWidth') ? `button--text-${this.get('textWidth')}` : '';
-  })
+  }),
+  click() {
+    this.get('action')(...arguments);
+  }
 
 });
