@@ -16,6 +16,9 @@ Drawing a great amount of inspiration from this Codrops [article](https://tympan
 ## Demo
 [Demo](http://ember-stylish-buttons.surge.sh)
 
+Play with different options for the component and customize and get the template code to use in your application.
+[Playground](http://ember-stylish-buttons.surge.sh/playground)
+
 <img src="https://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/uploads/2015/02/ButtonStyle_Itzel.gif"/>
 
 ## Installation
@@ -32,10 +35,6 @@ ember install ember-stylish-buttons
 {{#stylish-button type="isi" textWidth="thick" upperCase=true size="s"}}
   <i class="button__icon icon icon-box"></i><span>Archive</span>
 {{/stylish-button}}
-
-{{stylish-button type="winona" border="thin" shape="round-s"  action=(action 'buttonAction') text="Open Project"}}
-{{stylish-button type="winona" border="thin" shape="round-s"  action=(action 'buttonAction' 'Hello' 'World') text="Open Project"}}
-
 ```
 
 ## Properties
@@ -44,10 +43,17 @@ The **stylish-button** component takes the following list of properties to modif
 ### type [String]
 This parameter controls the overall style of the buttons.
 Please find below the list of values it can take from the **Styles** section.
+```hbs
+{{stylish-button type="winona" border="thin" shape="round-s"  text="Open Project"}}
+```
 
 ### action [Closure Action]
 This parameter performs the click action with whatever action is passed along with parameters.
 This is where you need to send your actions for the buttons.
+```hbs
+{{stylish-button type="winona" border="thin" shape="round-s"  action=(action 'buttonAction') text="Open Project"}}
+{{stylish-button type="winona" border="thin" shape="round-s"  action=(action 'buttonAction' 'Hello' 'World') text="Open Project"}}
+```
 
 ### size [String]
 This parameter controls the size of the button.
@@ -55,6 +61,9 @@ Possible values include:
 - s => small
 - m => medium
 - l => large
+```hbs
+{{#stylish-button type="wayra" border="thick" upperCase=true size="s" }}Remove{{/stylish-button}}
+```
 
 ### textWidth [String]
 This parameter controls the bold property of the text in the button.
@@ -62,16 +71,27 @@ Possible values include:
 - thin
 - thick
 - medium
+```hbs
+{{#stylish-button type="isi" textWidth="thick" upperCase=true size="s"}}
+  <i class="button__icon icon icon-box"></i><span>Archive</span>
+{{/stylish-button}}
+```
 
 ### border [String]
 This parameter controls the border thickness of the button.
 Possible values include:
 - thin
 - thick
+```hbs
+{{stylish-button type="ujarak" border="thin" textWidth="thick" text="Publish"}}
+```
 
 ### upperCase [Boolean]
 This parameter transforms the button text to uppercase.
 Default value is **false**
+```hbs
+{{stylish-button type="ujarak" border="thick" upperCase=true size="s" inverted=true textWidth="thick" text="Publish"}}
+```
 
 ### shape [String]
 This parameter transforms the button to a pill shape with various border-radius dimensions.
@@ -79,6 +99,9 @@ Possible values include:
 - round-s
 - round-l
 - round-m
+```hbs
+{{stylish-button type="winona" border="thick" shape="round-l" size="s" upperCase=true textWidth="thick" text="Open Project"}}
+```
 
 ## Styles
 Ember stylish buttons come with about 18 different styles for button. 
