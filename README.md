@@ -19,6 +19,8 @@ Drawing a great amount of inspiration from this Codrops [article](https://tympan
 Play with different options for the component and customize and get the template code to use in your application.
 [Playground](http://ember-stylish-buttons.surge.sh/playground)
 
+http://ember-stylish-buttons.surge.sh/playground
+
 <img src="https://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/uploads/2015/02/ButtonStyle_Itzel.gif"/>
 
 ## Installation
