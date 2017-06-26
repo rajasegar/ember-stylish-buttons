@@ -15,12 +15,11 @@ We use CSS transitions and pseudo-elements for most of the effects.
 Drawing a great amount of inspiration from this Codrops [article](https://tympanus.net/codrops/2015/02/26/inspiration-button-styles-effects/)
 
 ## Demo
-[Demo](http://ember-stylish-buttons.surge.sh)
+[Demo](https://rajasegar.github.io/ember-stylish-buttons/)
 
 Play with different options for the component and customize and get the template code to use in your application.
-[Playground](http://ember-stylish-buttons.surge.sh/playground)
+[Playground](https://rajasegar.github.io/ember-stylish-buttons/#/playground)
 
-http://ember-stylish-buttons.surge.sh/playground
 
 <img src="https://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/uploads/2015/02/ButtonStyle_Itzel.gif"/>
 
