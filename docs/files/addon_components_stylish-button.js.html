@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>addon/components/stylish-button.js - Ember Stylish Buttons</title>
+    <meta name="description" content="Some fresh styles &amp; hover effects for the modern Ember button.">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700' rel='stylesheet' type='text/css'>
+    
+
+</head>
+<body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="../" class="navbar-brand">
+              <img src="../assets/img/ember-logo.png" alt="enterprise logo">
+            <span>Stylish Buttons</span>
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="nav">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://github.com/rajasegar/ember-stylish-buttons" class="fa fa-github github"></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="main-wrapper" class="row">
+        <div id="content-wrapper">
+            <ol class="panel-group" id="sidebar" role="tablist" aria-multiselectable="true">
+                <li class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="sidebar-search-heading">
+                        <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" href="#sidebar-search" aria-expanded="true" aria-controls="collapseOne">
+                        Search
+                      </a>
+                    </h4>
+                    </div>
+                    <div id="sidebar-search" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="sidebar-search-heading">
+                        <div class="panel-body">
+                            <div id="api-tabview-filter">
+                                <input type="search" id="api-filter" placeholder="Search...">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                    <li class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="sidebar-version-heading">
+                            <h4 class="panel-title">
+                                <a role="button" href="https://github.com/rajasegar/ember-stylish-buttons/commits/v0.0.8" target="_blank">
+                                  Tag: v0.0.8
+                                </a>
+                            </h4>
+                        </div>
+                    </li>
+                <li class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="sidebar-modules-heading">
+                        <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" href="#sidebar-modules" aria-expanded="true" aria-controls="collapseOne">
+                      Modules
+                    </a>
+                  </h4>
+                    </div>
+                    <div id="sidebar-modules" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="sidebar-modules-heading">
+                        <div class="panel-body">
+                        </div>
+                    </div>
+                </li>
+            
+                <li class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="sidebar-classes-heading">
+                        <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" href="#sidebar-classes" aria-expanded="true" aria-controls="collapseOne">
+                        Classes
+                      </a>
+                    </h4>
+                    </div>
+                    <div id="sidebar-classes" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="sidebar-classes-heading">
+                        <div class="panel-body">
+                            <ol>
+                                    <li>
+                                        <a href="../classes/ember-stylish-buttons.html">ember-stylish-buttons</a>
+                                    </li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+            <div class="content-container">
+                <div class="apidocs">
+                    <div id="docs-main">
+                        <div class="content">
+<div class="page-header">
+    <h1><i class="fa fa-file-code-o" aria-hidden="true"></i>  File</h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+/**
+   Ember Stylish buttons
+   Some fresh styles &amp; hover effects for the modern button
+
+   ## Installation
+
+   &#x60;&#x60;&#x60;shell
+   ember install ember-stylish-buttons
+   &#x60;&#x60;&#x60;
+
+   ## Usage:
+
+   &#x60;&#x60;&#x60;hbs
+   \{{stylish-button type=&quot;winona&quot; border=&quot;thin&quot; shape=&quot;round-s&quot;  text=&quot;Open Project&quot;}}
+
+   \{{#stylish-button type=&quot;wayra&quot; border=&quot;thick&quot; upperCase=true size=&quot;s&quot; }}Remove{{/stylish-button}}
+
+   \{{#stylish-button type=&quot;isi&quot; textWidth=&quot;thick&quot; upperCase=true size=&quot;s&quot;}}
+   &lt;i class=&quot;button__icon icon icon-box&quot;&gt;&lt;/i&gt;&lt;span&gt;Archive&lt;/span&gt;
+   \{{/stylish-button}}
+   &#x60;&#x60;&#x60;
+
+   @public
+   @class ember-stylish-buttons
+
+   
+*/
+
+import Ember from &#x27;ember&#x27;;
+import layout from &#x27;../templates/components/stylish-button&#x27;;
+
+const  {
+  computed
+} = Ember;
+
+export default Ember.Component.extend({
+  layout,
+  /**
+     Changing the tagName property to button to render a button element by default.
+
+     @public
+     @property tagName
+     @type String
+     @default &quot;button&quot;
+  */
+
+  tagName: &#x27;button&#x27;,
+
+  /**
+     Binding a default &quot;.button&quot; class for the button
+
+     @public
+     @property classNames
+     @type Array
+     @default &quot;[&#x27;button&#x27;]&quot;
+  */
+
+  classNames: [&#x27;button&#x27;],
+  classNameBindings: [
+    &#x27;buttonStyle&#x27;,
+    &#x27;buttonBorder&#x27;,
+    &#x27;buttonShape&#x27;,
+    &#x27;upperCase:button--text-upper&#x27;,
+    &#x27;inverted:button--inverted&#x27;,
+    &#x27;invertedAlt:button--inverted-alt&#x27;,
+    &#x27;buttonTextWidth&#x27;,
+    &#x27;buttonSize&#x27;
+  ],
+  attributeBindings: [&#x27;text:data-text&#x27;],
+  /**
+     buttonStyle computed property is derived from the **type** attribute
+
+     @public
+     @method buttonStyle
+     @param {String} type
+     @return {String}
+  */
+
+  buttonStyle: computed(&#x27;type&#x27;, function() {
+    return &#x60;button--${this.get(&#x27;type&#x27;)}&#x60;;
+  }),
+  /**
+     buttonBorder computed property is derived from the **border** attribute
+
+     @public
+     @method buttonBorder
+     @param {String} type
+     @return {String}
+  */
+  buttonBorder: computed(&#x27;border&#x27;, function() {
+    return &#x60;button--border-${this.get(&#x27;border&#x27;)}&#x60;;
+  }),
+  /**
+     buttonShape computed property is derived from the **shape** attribute
+
+     @public
+     @method buttonShape
+     @param {String} type
+     @return {String}
+  */
+  buttonShape: computed(&#x27;shape&#x27;, function() {
+    return this.get(&#x27;shape&#x27;) ? &#x60;button--${this.get(&#x27;shape&#x27;)}&#x60; : &#x27;&#x27;;
+  }),
+  /**
+     buttonSize computed property is derived from the **size** attribute
+
+     @public
+     @method buttonSize
+     @param {String} type
+     @return {String}
+  */
+  buttonSize: computed(&#x27;size&#x27;, function() {
+    return this.get(&#x27;size&#x27;) ? &#x60;button--size-${this.get(&#x27;size&#x27;)}&#x60; : &#x27;&#x27;;
+  }),
+  /**
+     buttonTextWidth computed property is derived from the **textWidth** attribute
+
+     @public
+     @method buttontextWidth
+     @param {String} type
+     @return {String}
+  */
+  buttonTextWidth: computed(&#x27;textWidth&#x27;, function() {
+    return this.get(&#x27;textWidth&#x27;) ? &#x60;button--text-${this.get(&#x27;textWidth&#x27;)}&#x60; : &#x27;&#x27;;
+  }),
+  /**
+     click action for the button
+
+     Gets the action passed in the **action** attribute and call it with
+     whatever arguments passed 
+
+     @public
+     @method click
+  */
+  click() {
+    this.get(&#x27;action&#x27;)(...arguments);
+  }
+
+});
+
+    </pre>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/vendor/prettify/prettify-min.js"></script>
+    <script>prettyPrint();</script>
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="../assets/vendor/github-slugger/slugger.js"></script>
+    <script src="../assets/js/yuidoc-bootstrap.js"></script>
+</body>
+</html>

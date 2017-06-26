@@ -1,0 +1,179 @@
+{
+    "project": {
+        "name": "Ember Stylish Buttons",
+        "description": "Some fresh styles & hover effects for the modern Ember button.",
+        "url": "https://github.com/rajasegar/ember-stylish-buttons",
+        "version": "v0.0.8"
+    },
+    "files": {
+        "addon/components/stylish-button.js": {
+            "name": "addon/components/stylish-button.js",
+            "modules": {},
+            "classes": {
+                "ember-stylish-buttons": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "ember-stylish-buttons": {
+            "name": "ember-stylish-buttons",
+            "shortname": "ember-stylish-buttons",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "addon/components/stylish-button.js",
+            "line": 1,
+            "description": "Ember Stylish buttons\nSome fresh styles & hover effects for the modern button\n\n## Installation\n\n```shell\nember install ember-stylish-buttons\n```\n\n## Usage:\n\n```hbs\n\\{{stylish-button type=\"winona\" border=\"thin\" shape=\"round-s\"  text=\"Open Project\"}}\n\n\\{{#stylish-button type=\"wayra\" border=\"thick\" upperCase=true size=\"s\" }}Remove{{/stylish-button}}\n\n\\{{#stylish-button type=\"isi\" textWidth=\"thick\" upperCase=true size=\"s\"}}\n<i class=\"button__icon icon icon-box\"></i><span>Archive</span>\n\\{{/stylish-button}}\n```",
+            "access": "public",
+            "tagname": ""
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "addon/components/stylish-button.js",
+            "line": 38,
+            "description": "Changing the tagName property to button to render a button element by default.",
+            "access": "public",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "tagName",
+            "type": "String",
+            "default": "\"button\"",
+            "class": "ember-stylish-buttons"
+        },
+        {
+            "file": "addon/components/stylish-button.js",
+            "line": 49,
+            "description": "Binding a default \".button\" class for the button",
+            "access": "public",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "classNames",
+            "type": "Array",
+            "default": "\"['button']\"",
+            "class": "ember-stylish-buttons"
+        },
+        {
+            "file": "addon/components/stylish-button.js",
+            "line": 70,
+            "description": "buttonStyle computed property is derived from the **type** attribute",
+            "access": "public",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "buttonStyle",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "ember-stylish-buttons"
+        },
+        {
+            "file": "addon/components/stylish-button.js",
+            "line": 82,
+            "description": "buttonBorder computed property is derived from the **border** attribute",
+            "access": "public",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "buttonBorder",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "ember-stylish-buttons"
+        },
+        {
+            "file": "addon/components/stylish-button.js",
+            "line": 93,
+            "description": "buttonShape computed property is derived from the **shape** attribute",
+            "access": "public",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "buttonShape",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "ember-stylish-buttons"
+        },
+        {
+            "file": "addon/components/stylish-button.js",
+            "line": 104,
+            "description": "buttonSize computed property is derived from the **size** attribute",
+            "access": "public",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "buttonSize",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "ember-stylish-buttons"
+        },
+        {
+            "file": "addon/components/stylish-button.js",
+            "line": 115,
+            "description": "buttonTextWidth computed property is derived from the **textWidth** attribute",
+            "access": "public",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "buttontextWidth",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "ember-stylish-buttons"
+        },
+        {
+            "file": "addon/components/stylish-button.js",
+            "line": 126,
+            "description": "click action for the button\n\nGets the action passed in the **action** attribute and call it with\nwhatever arguments passed",
+            "access": "public",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "click",
+            "class": "ember-stylish-buttons"
+        }
+    ],
+    "warnings": []
+}
