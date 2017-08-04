@@ -50,6 +50,6 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
-    "demoURL": "http://ember-stylish-buttons.surge.sh"
+    "demoURL": "https://rajasegar.github.io/ember-stylish-buttons/"
   }
 }

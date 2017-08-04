@@ -23,7 +23,6 @@
    @public
    @class ember-stylish-buttons
 
-   
 */
 
 import Ember from 'ember';
@@ -64,7 +63,8 @@ export default Ember.Component.extend({
     'inverted:button--inverted',
     'invertedAlt:button--inverted-alt',
     'buttonTextWidth',
-    'buttonSize'
+    'buttonSize',
+    'customClasses'
   ],
   attributeBindings: ['text:data-text'],
   /**

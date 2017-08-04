@@ -105,6 +105,18 @@ Possible values include:
 {{stylish-button type="winona" border="thick" shape="round-l" size="s" upperCase=true textWidth="thick" text="Open Project"}}
 ```
 
+### customClasses [String(s)]
+This parameter adds your custom classnames to the component class list.
+It is useful to override the styles with your own classnames.
+```hbs
+{{stylish-button type="winona" border="thin" shape="round-s"  text="Primary" customClasses="btn-primary"}}
+{{stylish-button type="winona" border="thin" shape="round-s"  text="Success" customClasses="btn-success"}}
+{{stylish-button type="winona" border="thin" shape="round-s"  text="Info" customClasses="btn-info"}}
+{{stylish-button type="winona" border="thin" shape="round-s"  text="Warning" customClasses="btn-warning"}}
+{{stylish-button type="winona" border="thin" shape="round-s"  text="Danger" customClasses="btn-danger"}}
+
+```
+
 ## Styles
 Ember stylish buttons come with about 18 different styles for button. 
 Just give any one of the following values for the **type** attribute of the component.
