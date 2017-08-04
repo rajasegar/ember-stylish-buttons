@@ -3,7 +3,7 @@
         "name": "Ember Stylish Buttons",
         "description": "Some fresh styles & hover effects for the modern Ember button.",
         "url": "https://github.com/rajasegar/ember-stylish-buttons",
-        "version": "v0.0.10"
+        "version": "v0.0.11"
     },
     "files": {
         "addon/components/stylish-button.js": {
@@ -37,7 +37,7 @@
     "classitems": [
         {
             "file": "addon/components/stylish-button.js",
-            "line": 38,
+            "line": 37,
             "description": "Changing the tagName property to button to render a button element by default.",
             "access": "public",
             "tagname": "",
@@ -49,7 +49,7 @@
         },
         {
             "file": "addon/components/stylish-button.js",
-            "line": 49,
+            "line": 48,
             "description": "Binding a default \".button\" class for the button",
             "access": "public",
             "tagname": "",
