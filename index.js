@@ -23,7 +23,6 @@ module.exports = {
   importThemes: function(app) {
     var projectConfig = this.project.config(app.env);
     var config = projectConfig['ember-stylish-buttons'] || {};
-    console.log(config);
     var themes = [];
     var excludedBaseStyles = false;
 
@@ -74,8 +73,6 @@ module.exports = {
     if(!excludedBaseStyles) {
       app.import('vendor/ember-stylish-buttons/base.css');
     }
-
-    console.log(themes);
 
     themes = themes.length ? themes : ['winona'];
 
