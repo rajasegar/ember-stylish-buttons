@@ -1,0 +1,68 @@
+/* Common button styles */
+.button {
+	  float: left;
+	  min-width: 150px;
+	  max-width: 250px;
+	  display: block;
+	  margin: 1em;
+	  padding: 1em 2em;
+	  border: none;
+	  background: none;
+	  color: inherit;
+	  vertical-align: middle;
+	  position: relative;
+	  z-index: 1;
+	  -webkit-backface-visibility: hidden;
+	  -moz-osx-font-smoothing: grayscale;
+}
+.button:focus {
+	  outline: none;
+}
+.button > span {
+	  vertical-align: middle;
+}
+/* Sizes */
+.button--size-s {
+	  font-size: 14px;
+}
+.button--size-m {
+	  font-size: 16px;
+}
+.button--size-l {
+	  font-size: 18px;
+}
+
+/* Typography and Roundedness */
+.button--text-upper {
+	  letter-spacing: 2px;
+	  text-transform: uppercase;
+}
+.button--text-thin {
+	  font-weight: 300;
+}
+.button--text-medium {
+	  font-weight: 500;
+}
+.button--text-thick {
+	  font-weight: 600;
+}
+.button--round-s {
+	  border-radius: 5px;
+}
+.button--round-m {
+	  border-radius: 15px;
+}
+.button--round-l {
+	  border-radius: 40px;
+}
+
+/* Borders */
+.button--border-thin {
+	  border: 1px solid;
+}
+.button--border-medium {
+	  border: 2px solid;
+}
+.button--border-thick {
+	  border: 3px solid;
+}

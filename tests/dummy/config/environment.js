@@ -30,6 +30,30 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV['ember-stylish-buttons'] = {
+      includedThemes: [
+        'antiman',
+        'aylen',
+        'isi',
+        'itzel',
+        'moema',
+        'naira',
+        'nina',
+        'nuka',
+        'pipaluk',
+        'quidel',
+        'rayen',
+        'sacnite',
+        'saqui',
+        'shikoba',
+        'tamaya',
+        'ujarak',
+        'wapasha',
+        'wayra',
+        'winona'
+      ],
+      // excludedThemes: []
+    };
   }
 
   if (environment === 'test') {
@@ -48,6 +72,7 @@ module.exports = function(environment) {
     ENV.rootURL = '/ember-stylish-buttons/';
 
   }
+
 
   return ENV;
 };
