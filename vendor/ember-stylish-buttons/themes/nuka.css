@@ -1,9 +1,7 @@
 /* Nuka */
 .button--nuka {
 	margin: 1em 2em;
-	-webkit-transition: color 0.3s;
 	transition: color 0.3s;
-	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 .button--nuka.button--inverted {
@@ -23,9 +21,7 @@
 	left: -4px;
 	right: -4px;
 	opacity: 0.2;
-	-webkit-transform: scale3d(0.7, 1, 1);
 	transform: scale3d(0.7, 1, 1);
-	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
 	transition: transform 0.3s, opacity 0.3s;
 }
 .button--nuka::after {
@@ -33,14 +29,11 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	-webkit-transform: scale3d(1.1, 1, 1);
 	transform: scale3d(1.1, 1, 1);
-	-webkit-transition: -webkit-transform 0.3s, background-color 0.3s;
 	transition: transform 0.3s, background-color 0.3s;
 }
 .button--nuka::before,
 .button--nuka::after {
-	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 .button--nuka.button--inverted::before,
@@ -61,6 +54,5 @@
 }
 .button--nuka:hover::after,
 .button--nuka:hover::before {
-	-webkit-transform: scale3d(1, 1, 1);
 	transform: scale3d(1, 1, 1);
 }
