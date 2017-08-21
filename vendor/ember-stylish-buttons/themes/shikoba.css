@@ -5,7 +5,6 @@
 	background: #fff;
 	color: #37474f;
 	border-color: #37474f;
-	-webkit-transition: background-color 0.3s, border-color 0.3s, color 0.3s;
 	transition: background-color 0.3s, border-color 0.3s, color 0.3s;
 }
 .button--shikoba.button--inverted {
@@ -14,27 +13,20 @@
 }
 .button--shikoba > span {
 	display: inline-block;
-	-webkit-transform: translate3d(-10px, 0, 0);
 	transform: translate3d(-10px, 0, 0);
-	-webkit-transition: -webkit-transform 0.3s;
 	transition: transform 0.3s;
-	-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
 	transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
 }
 .button--shikoba .button__icon {
 	position: absolute;
 	left: 20px;
 	font-size: 18px;
-	-webkit-transform: translate3d(-40px, 2.5em, 0);
 	transform: translate3d(-40px, 2.5em, 0);
-	-webkit-transition: -webkit-transform 0.3s;
 	transition: transform 0.3s;
-	-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
 	transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
 }
 .button--shikoba:hover .button__icon,
 .button--shikoba:hover > span {
-	-webkit-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
 }
 .button--shikoba:hover {

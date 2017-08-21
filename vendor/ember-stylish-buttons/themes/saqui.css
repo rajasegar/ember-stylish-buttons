@@ -3,7 +3,6 @@
 	overflow: hidden;
 	color: #fff;
 	background: #37474f;
-	-webkit-transition: background-color 0.3s ease-in, color 0.3s ease-in;
 	transition: background-color 0.3s ease-in, color 0.3s ease-in;
 }
 .button--saqui.button--inverted {
@@ -19,11 +18,8 @@
 	height: 100%;
 	padding: 1em 2em;
 	color: #37474f;
-	-webkit-transform-origin: -25% 50%;
 	transform-origin: -25% 50%;
-	-webkit-transform: rotate3d(0, 0, 1, 45deg);
 	transform: rotate3d(0, 0, 1, 45deg);
-	-webkit-transition: -webkit-transform 0.3s ease-in;
 	transition: transform 0.3s ease-in;
 }
 .button--saqui.button--inverted::after {
@@ -31,7 +27,6 @@
 }
 .button--saqui:hover::after,
 .button--saqui:hover {
-	-webkit-transition-timing-function: ease-out;
 	transition-timing-function: ease-out;
 }
 .button--saqui:hover {
@@ -43,6 +38,5 @@
 	color: #3f51b5;
 }
 .button--saqui:hover::after {
-	-webkit-transform: rotate3d(0, 0, 1, 0deg);
 	transform: rotate3d(0, 0, 1, 0deg);
 }

@@ -2,7 +2,6 @@
 .button.button--wapasha {
 	background: #37474f;
 	color: #fff;
-	-webkit-transition: background-color 0.3s, color 0.3s;
 	transition: background-color 0.3s, color 0.3s;
 }
 .button--wapasha.button--inverted {
@@ -20,11 +19,8 @@
 	z-index: -1;
 	border-radius: inherit;
 	opacity: 0;
-	-webkit-transform: scale3d(0.6, 0.6, 1);
 	transform: scale3d(0.6, 0.6, 1);
-	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
 	transition: transform 0.3s, opacity 0.3s;
-	-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
 	transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
 }
 .button--wapasha.button--inverted::before {
@@ -39,7 +35,6 @@
 	color: #7986cb;
 }
 .button--wapasha:hover::before {
-	-webkit-transform: scale3d(1, 1, 1);
 	transform: scale3d(1, 1, 1);
 	opacity: 1;
 }

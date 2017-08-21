@@ -1,6 +1,5 @@
 /* Ujarak */
 .button--ujarak {
-	-webkit-transition: border-color 0.4s, color 0.4s;
 	transition: border-color 0.4s, color 0.4s;
 }
 .button--ujarak::before {
@@ -13,11 +12,8 @@
 	background: #37474f;
 	z-index: -1;
 	opacity: 0;
-	-webkit-transform: scale3d(0.7, 1, 1);
 	transform: scale3d(0.7, 1, 1);
-	-webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
 	transition: transform 0.4s, opacity 0.4s;
-	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 .button--ujarak.button--round-s::before {
@@ -28,7 +24,6 @@
 }
 .button--ujarak,
 .button--ujarak::before {
-	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 .button--ujarak:hover {
@@ -41,6 +36,5 @@
 }
 .button--ujarak:hover::before {
 	opacity: 1;
-	-webkit-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
 }

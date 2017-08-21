@@ -140,9 +140,9 @@ Just give any one of the following values for the **type** attribute of the comp
 - shikoba
 
 ## Configuring
-Add a configuration for **ember-stylish-buttons** to include only the themes that you will use.
+Add a configuration for `ember-stylish-buttons` to include only the themes that you will use.
 ```js
-ENV['ember-stylish-buttons] = {
+ENV['ember-stylish-buttons'] = {
   includedThemes: ['winona', 'ujarak', 'shikoba'],
   excludedThemes: ['wapasha'],
   excludeBaseStyles: false, // defaults to false
@@ -155,6 +155,7 @@ To exclude or not include a theme, means that it's css styles will not be bundle
 > **Note:** including a blank array e.g. `includeThemes: []` will not include any themes, leaving
 you to define your own theme styles. See the `vendor/ember-stylish-buttons/themes` directory
 for reference.
+
 > **Note:** you may also want to set `excludeBaseStyles: true` so that this addon doesn't include the styles
 used by all the themes.
 
