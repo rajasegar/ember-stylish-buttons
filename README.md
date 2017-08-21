@@ -120,7 +120,7 @@ It is useful to override the styles with your own classnames.
 ## Styles
 Ember stylish buttons come with about 18 different styles for button. 
 Just give any one of the following values for the **type** attribute of the component.
-- winona
+- winona (default)
 - ujarak
 - wayra
 - tamaya
@@ -139,6 +139,27 @@ Just give any one of the following values for the **type** attribute of the comp
 - sacnite
 - shikoba
 
+## Configuring
+Add a configuration for **ember-stylish-buttons** to include only the themes that you will use.
+```js
+ENV['ember-stylish-buttons] = {
+  includedThemes: ['winona', 'ujarak', 'shikoba'],
+  excludedThemes: ['wapasha'],
+  excludeBaseStyles: false, // defaults to false
+  defaultTheme: 'winona',    // defaults to 'winona'
+};
+```
+
+To exclude or not include a theme, means that it's css styles will not be bundled with your application, thus not polluting your app.
+
+> **Note:** including a blank array e.g. `includeThemes: []` will not include any themes, leaving
+you to define your own theme styles. See the `vendor/ember-stylish-buttons/themes` directory
+for reference.
+> **Note:** you may also want to set `excludeBaseStyles: true` so that this addon doesn't include the styles
+used by all the themes.
+
+A big Thanks to [Ilya Radchenko](https://github.com/knownasilya) for making this configuration possible to have
+a small memory footprint of css in your app when you are using the addon.
 
 ## Running
 
@@ -156,3 +177,7 @@ Just give any one of the following values for the **type** attribute of the comp
 * `ember build`
 
 For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+
+## Credits
+* [Mary Lou](https://github.com/crnacura)
+* [Ilya Radchenko](https://github.com/knownasilya)
