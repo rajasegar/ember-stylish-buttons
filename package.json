@@ -1,6 +1,6 @@
 {
   "name": "ember-stylish-buttons",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Some fresh styles & hover effects for the modern Ember button.",
   "keywords": [
     "ember-addon"
