@@ -15,6 +15,7 @@ We use CSS transitions and pseudo-elements for most of the effects.
 
 Drawing a great amount of inspiration from this Codrops [article](https://tympanus.net/codrops/2015/02/26/inspiration-button-styles-effects/)
 
+
 ## Demo
 [Demo](https://rajasegar.github.io/ember-stylish-buttons/)
 
