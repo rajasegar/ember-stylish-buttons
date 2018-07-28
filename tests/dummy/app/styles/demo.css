@@ -90,3 +90,9 @@
 	  color: #d9534f;
 	  border-color: #d43f3a;
 }
+
+.v-center {
+    display:block;
+    margin:0 auto;
+    text-align:center;
+}

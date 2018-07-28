@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
 
-export default Ember.Controller.extend({
+export default Controller.extend({
   actions: {
     buttonAction(s1, s2) {
       console.log(s1, ' ', s2); // eslint-disable-line

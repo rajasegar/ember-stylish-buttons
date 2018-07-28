@@ -25,14 +25,12 @@
 
 */
 
-import Ember from 'ember';
+import Component from '@ember/component';
+
+import { computed } from '@ember/object';
 import layout from '../templates/components/stylish-button';
 
-const  {
-  computed
-} = Ember;
-
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   /**
      Changing the tagName property to button to render a button element by default.

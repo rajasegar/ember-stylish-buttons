@@ -1,9 +1,7 @@
-import Ember from 'ember';
-
-const {
-  computed,
-  String: { w, htmlSafe }
-} = Ember;
+import { reads } from '@ember/object/computed';
+import Controller from '@ember/controller';
+import { computed } from '@ember/object';
+import { htmlSafe, w } from '@ember/string';
 
 const DEFAULT_STYLE = {
   border: null,
@@ -93,7 +91,7 @@ const esbStyles = [
   }
 ];
 
-export default Ember.Controller.extend({
+export default Controller.extend({
   // buttonStyles: w('winona winona-pill winona-inverted ujarak wayra tamaya rayen pipaluk moema isi aylan saqui wapasha nuka antiman itzel naira quidel sacnite shikoba'),
   buttonStyle: computed(function() {
     return Object.assign({}, DEFAULT_STYLE, esbStyles[0]);
@@ -103,7 +101,7 @@ export default Ember.Controller.extend({
   shapeOptions: w('round-s round-m round-l'),
   widthOptions: w('thin medium thick'),
   sizeOptions: w('s m l'),
-  currentStyle: computed.reads('buttonStyle.caption'),
+  currentStyle: reads('buttonStyle.caption'),
   currentBorder: computed('buttonStyle.border', function() {
     let _border = this.get('buttonStyle.border');
     return !_border ? '' : `border="${_border}"`;
