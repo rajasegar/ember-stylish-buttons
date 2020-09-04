@@ -1,62 +1,40 @@
-/* eslint-env node */
-module.exports = {
-  scenarios: [
-    {
-      name: 'ember-lts-2.4',
-      bower: {
-        dependencies: {
-          'ember': 'components/ember#lts-2-4'
-        },
-        resolutions: {
-          'ember': 'lts-2-4'
+'use strict';
+
+const getChannelURL = require('ember-source-channel-url');
+
+module.exports = async function() {
+  return {
+    scenarios: [
+      {
+        name: 'ember-lts-3.16',
+        npm: {
+          devDependencies: {
+            'ember-source': '~3.16.0'
+          }
         }
       },
-      npm: {
-        devDependencies: {
-          'ember-source': null
-        }
-      }
-    },
-    {
-      name: 'ember-lts-2.8',
-      bower: {
-        dependencies: {
-          'ember': 'components/ember#lts-2-8'
-        },
-        resolutions: {
-          'ember': 'lts-2-8'
+      {
+        name: 'ember-lts-3.20',
+        npm: {
+          devDependencies: {
+            'ember-source': '~3.20.5'
+          }
         }
       },
-      npm: {
-        devDependencies: {
-          'ember-source': null
-        }
-      }
-    },
-    {
-      name: 'ember-release',
-      bower: {
-        dependencies: {
-          'ember': 'components/ember#release'
-        },
-        resolutions: {
-          'ember': 'release'
+      {
+        name: 'ember-release',
+        npm: {
+          devDependencies: {
+            'ember-source': await getChannelURL('release')
+          }
         }
       },
-      npm: {
-        devDependencies: {
-          'ember-source': null
-        }
-      }
-    },
-    {
-      name: 'ember-beta',
-      bower: {
-        dependencies: {
-          'ember': 'components/ember#beta'
-        },
-        resolutions: {
-          'ember': 'beta'
+      {
+        name: 'ember-beta',
+        npm: {
+          devDependencies: {
+            'ember-source': await getChannelURL('beta')
+          }
         }
       },
       npm: {
@@ -75,17 +53,21 @@ module.exports = {
           'ember': 'canary'
         }
       },
-      npm: {
-        devDependencies: {
-          'ember-source': null
+      {
+        name: 'ember-classic',
+        env: {
+          EMBER_OPTIONAL_FEATURES: JSON.stringify({
+            'application-template-wrapper': true,
+            'default-async-observers': false,
+            'template-only-glimmer-components': false
+          })
+        },
+        npm: {
+          ember: {
+            edition: 'classic'
+          }
         }
       }
-    },
-    {
-      name: 'ember-default',
-      npm: {
-        devDependencies: {}
-      }
-    }
-  ]
+    ]
+  };
 };
