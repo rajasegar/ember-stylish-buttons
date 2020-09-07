@@ -41,7 +41,7 @@
 <section class="content">
 	<h2>Wayra</h2>
 	<div class="box bg-1">
-          <StylishButton @type="wayra" @border="thick" @upperCase={{true}} @size="s" {{on 'click' (fn this.buttonAction "Hello" "World")}}>Remove</StylishButton>
+          <StylishButton @type="wayra" @border="thick" @upperCase={{true}} @size="s" {{ on "click" this.buttonAction}}>Remove</StylishButton>
     <StylishButton @type="wayra" @border="thick" @upperCase={{true}} @size="s">Open Project</StylishButton>
     <StylishButton @type="wayra" @border="thick" @upperCase={{true}} @size="s">Buy Now</StylishButton>
 	</div>

@@ -1,6 +1,6 @@
-import { reads } from '@ember/object/computed';
 import Controller from '@ember/controller';
-import { computed } from '@ember/object';
+import {  action } from '@ember/object';
+import {  tracked } from '@glimmer/tracking';
 import { htmlSafe, w } from '@ember/string';
 
 const DEFAULT_STYLE = {
@@ -91,56 +91,80 @@ const esbStyles = [
   }
 ];
 
-export default Controller.extend({
+export default class PlaygroundController extends Controller{
   // buttonStyles: w('winona winona-pill winona-inverted ujarak wayra tamaya rayen pipaluk moema isi aylan saqui wapasha nuka antiman itzel naira quidel sacnite shikoba'),
-  buttonStyle: computed(function() {
-    return Object.assign({}, DEFAULT_STYLE, esbStyles[0]);
-  }),
-  buttonStyles: esbStyles,
-  borderOptions: w('thin medium thick'),
-  shapeOptions: w('round-s round-m round-l'),
-  widthOptions: w('thin medium thick'),
-  sizeOptions: w('s m l'),
-  currentStyle: reads('buttonStyle.caption'),
-  currentBorder: computed('buttonStyle.border', function() {
-    let _border = this.get('buttonStyle.border');
-    return !_border ? '' : `border="${_border}"`;
-  }),
-  currentShape: computed('buttonStyle.shape', function() {
-    let _shape = this.get('buttonStyle.shape');
-    return !_shape ? '' : `shape="${_shape}"`;
-  }),
-  currentUpperCase: computed('buttonStyle.upperCase', function() {
-    return this.get('buttonStyle.upperCase') === true ? 'upperCase=true' : '';
-  }),
-  currentInverted: computed('buttonStyle.inverted', function() {
-    return this.get('buttonStyle.inverted') === true ? 'inverted=true' : '';
-  }),
-  currentSize: computed('buttonStyle.size', function() {
-    let _size = this.get('buttonStyle.size');
-    return !_size ? '' : `size="${_size}"`;
-  }),
-  currentTextWidth: computed('buttonStyle.textWidth', function() {
-    let _tw = this.get('buttonStyle.textWidth');
-    return !_tw ? '' : `textWidth="${_tw}"`;
-  }),
-  code: computed('buttonStyle.{border,shape,upperCase,inverted,size,textWidth}', function() {
-    return htmlSafe(`{{#stylish-component
-    type="${this.get('buttonStyle.className')}"
-    ${this.get('currentBorder')}
-    ${this.get('currentShape')}
-    ${this.get('currentSize')}
-    ${this.get('currentUpperCase')}
-    ${this.get('currentInverted')}
-    ${this.get('currentTextWidth')}
-    text="Open Project"
-    }}`);
-  }),
-  actions : {
-    changeStyle(style) {
+
+  @tracked
+  buttonStyle = { ...DEFAULT_STYLE, ...esbStyles[0]};
+
+  buttonStyles = esbStyles;
+  borderOptions =  w('thin medium thick');
+  shapeOptions = w('round-s round-m round-l');
+  widthOptions = w('thin medium thick');
+  sizeOptions = w('s m l');
+
+  get currentStyle() { 
+    return this.buttonStyle.caption; 
+  }
+
+  
+  get currentBorder() {
+    let _border = this.buttonStyle.border;
+    return !_border ? '' : `@border="${_border}"`;
+  }
+
+  get currentShape() {
+    let _shape = this.buttonStyle.shape;
+    return !_shape ? '' : `@shape="${_shape}"`;
+  }
+
+  get currentUpperCase() {
+    return this.buttonStyle.upperCase === true ? '@upperCase=true' : '';
+  }
+
+  get currentInverted() {
+    return this.buttonStyle.inverted === true ? '@inverted=true' : '';
+  }
+
+  get currentSize() {
+    let _size = this.buttonStyle.size;
+    return !_size ? '' : `@size="${_size}"`;
+  }
+
+  get currentTextWidth() {
+    let _tw = this.buttonStyle.textWidth;
+    return !_tw ? '' : `@textWidth="${_tw}"`;
+  }
+
+  get code() {
+    return htmlSafe(`<StylishButton
+    type="${this.buttonStyle.className}"
+    ${this.currentBorder}
+    ${this.currentShape}
+    ${this.currentSize}
+    ${this.currentUpperCase}
+    ${this.currentInverted}
+    ${this.currentTextWidth}
+    @text="Open Project"
+    />`);
+  }
+
+
+  @action
+    changeStyle(event) {
+      const style = event.target.value;
       let _style = esbStyles.find((s) => s.name === style);
       let newStyle = Object.assign({},DEFAULT_STYLE, _style);
-      this.set('buttonStyle', newStyle);
+      this.buttonStyle = newStyle;
     }
+
+  @action
+  updateBorder(event) {
+    this.buttonStyle.border = event.target.value;
   }
-});
+
+  @action
+  updateShape(event) {
+    console.log(event.target.value);
+  }
+}

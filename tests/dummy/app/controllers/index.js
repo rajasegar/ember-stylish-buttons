@@ -1,9 +1,10 @@
 import Controller from '@ember/controller';
+import { action } from '@ember/object';
 
-export default Controller.extend({
-  actions: {
-    buttonAction(s1, s2) {
-      console.log(s1, ' ', s2); // eslint-disable-line
+export default class IndexController extends Controller {
+
+  @action
+    buttonAction() {
+      window.alert('hello world');
     }
-  }
-});
+}

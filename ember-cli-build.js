@@ -8,6 +8,9 @@ module.exports = function(defaults) {
     // Add options here
     minifyCSS: {
       enabled: false
+    },
+     'ember-cli-babel': {
+        includePolyfill: true
     }
   });
 
