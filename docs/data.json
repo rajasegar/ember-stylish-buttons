@@ -3,7 +3,7 @@
         "name": "Ember Stylish Buttons",
         "description": "Some fresh styles & hover effects for the modern Ember button.",
         "url": "https://github.com/rajasegar/ember-stylish-buttons",
-        "version": "2.0.0.c4b3c5d5"
+        "version": "2.0.0.bfa037d0"
     },
     "files": {
         "addon/components/stylish-button.js": {
@@ -28,7 +28,7 @@
             "extension_for": [],
             "file": "addon/components/stylish-button.js",
             "line": 1,
-            "description": "Ember Stylish buttons\nSome fresh styles & hover effects for the modern button\n\n## Installation\n\n```shell\nember install ember-stylish-buttons\n```\n\n## Usage:\n\n```hbs\n\\<StylishButton @type=\"winona\" @border=\"thin\" @shape=\"round-s\"  @text=\"Open Project\"/>\n\n\\<StylishButton @type=\"wayra\" @border=\"thick\" @upperCase=true @size=\"s\" >Remove</StylishButton>\n\n\\<StylishButton @type=\"isi\" @textWidth=\"thick\" @upperCase=true @size=\"s\">\n<i class=\"button__icon icon icon-box\"></i><span>Archive</span>\n\\</StylishButton>\n```",
+            "description": "Ember Stylish buttons\nSome fresh styles & hover effects for the modern button\n\n## Installation\n\n```shell\nember install ember-stylish-buttons\n```\n\n## Usage:\n\n```hbs\n<StylishButton @type=\"winona\" @border=\"thin\" @shape=\"round-s\"  @text=\"Open Project\"/>\n\n<StylishButton @type=\"wayra\" @border=\"thick\" @upperCase=true @size=\"s\" >Remove</StylishButton>\n\n<StylishButton @type=\"isi\" @textWidth=\"thick\" @upperCase=true @size=\"s\">\n<i class=\"button__icon icon icon-box\"></i><span>Archive</span>\n</StylishButton>\n```",
             "access": "public",
             "tagname": ""
         }
