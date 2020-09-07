@@ -1,0 +1,14 @@
+<button 
+  type="button" 
+  class="{{this.className}}"   data-text={{@text}}
+  ...attributes
+  >
+{{#if hasBlock}}
+  {{yield}}
+{{else}}
+  <span>
+    {{@text}}
+  </span>
+{{/if}}
+</button>
+

@@ -1,11 +1,11 @@
-{{#link-to 'index'}}Demo{{/link-to}}
+<LinkTo @route="index">Demo</LinkTo>
 <h3>Playground - Play with all the options to customize ember-stylish-buttons</h3>
 <div class="esb-options-wrapper">
   <div class="esb-option">
 <p>Style* : </p>
 <p>
-  <select onchange={{action 'changeStyle'  value="target.value"}}>
-    {{#each buttonStyles as |style|}}
+<select {{ on "change" this.changeStyle }}>
+    {{#each this.buttonStyles as |style|}}
       <option value={{style.name}}>{{style.caption}}</option>
     {{/each}}
   </select>
@@ -14,8 +14,8 @@
   <div class="esb-option">
 <p>Border: </p>
 <p>
-  <select onchange={{action (mut buttonStyle.border)  value="target.value"}}>
-    {{#each borderOptions as |border|}}
+<select {{ on "change" this.updateBorder }}>
+    {{#each this.borderOptions as |border|}}
       <option value={{border}}>{{border}}</option>
     {{/each}}
   </select>
@@ -25,8 +25,8 @@
 
 <p>Shape: </p>
 <p>
-  <select onchange={{action (mut buttonStyle.shape)  value="target.value"}}>
-    {{#each shapeOptions as |shape|}}
+<select {{ on "change" this.updateShape }}>
+    {{#each this.shapeOptions as |shape|}}
       <option value={{shape}}>{{shape}}</option>
     {{/each}}
   </select>
@@ -36,8 +36,8 @@
 
 <p>TextWidth: </p>
 <p>
-  <select onchange={{action (mut buttonStyle.textWidth)  value="target.value"}}>
-    {{#each widthOptions as |width|}}
+<select {{ on "change" this.updateTextWidth }}>
+    {{#each this.widthOptions as |width|}}
       <option value={{width}}>{{width}}</option>
     {{/each}}
   </select>
@@ -47,8 +47,8 @@
 
 <p>Size: </p>
 <p>
-  <select onchange={{action (mut buttonStyle.size)  value="target.value"}}>
-    {{#each sizeOptions as |size|}}
+<select {{ on "change" this.updateSize }}>
+    {{#each this.sizeOptions as |size|}}
       <option value={{size}}>{{size}}</option>
     {{/each}}
   </select>
@@ -56,28 +56,20 @@
   </div>
   <div class="esb-options">
     <p>Inverted: </p>
-    <p>{{input type="checkbox" checked=buttonStyle.inverted}}</p>
+    <p><Input @type="checkbox" @checked={{this.buttonStyle.inverted}} /></p>
   </div>
   <div class="esb-options">
     <p>Upper Case: </p>
-    <p>{{input type="checkbox" checked=buttonStyle.upperCase}}</p>
+    <p><Input @type="checkbox" @checked={{this.buttonStyle.upperCase}} /></p>
   </div>
 </div>
 <section class="content">
-	<h2>{{currentStyle}}</h2>
+	<h2>{{this.currentStyle}}</h2>
 	<div class="box">
-    {{stylish-button
-      type=buttonStyle.className
-      border=buttonStyle.border
-      shape=buttonStyle.shape
-      size=buttonStyle.size
-      upperCase=buttonStyle.upperCase
-      inverted=buttonStyle.inverted
-      textWidth=buttonStyle.textWidth
-      text="Open Project"}}
+    <StylishButton @type={{this.buttonStyle.className}} @border={{this.buttonStyle.border}} @shape={{this.buttonStyle.shape}} @size={{this.buttonStyle.size}} @upperCase={{this.buttonStyle.upperCase}} @inverted={{this.buttonStyle.inverted}} @textWidth={{this.buttonStyle.textWidth}} @text="Open Project" />
 	</div>
   <pre>
-   {{code}} 
+   {{this.code}} 
   </pre>
 </section>
 
