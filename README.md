@@ -1,10 +1,9 @@
 # ember-stylish-buttons
 
-[![Build Status](https://travis-ci.org/rajasegar/ember-stylish-buttons.svg?branch=master)](https://travis-ci.org/rajasegar/ember-stylish-buttons) 
-[![npm](https://img.shields.io/npm/dm/ember-stylish-buttons.svg)](https://www.npmjs.com/package/ember-stylish-buttons)
+![Build and Deploy](https://github.com/rajasegar/ember-stylish-buttons/workflows/CI/badge.svg)
+[![Coverage Status](https://coveralls.io/repos/github/rajasegar/ember-stylish-buttons/badge.svg?branch=master)](https://coveralls.io/github/rajasegar/ember-stylish-buttons?branch=master)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![npm version](http://img.shields.io/npm/v/ember-stylish-buttons.svg?style=flat)](https://npmjs.org/package/ember-stylish-buttons "View this project on npm")
-[![dependencies Status](https://david-dm.org/rajasegar/ember-stylish-buttons/status.svg)](https://david-dm.org/rajasegar/ember-stylish-buttons)
-[![devDependencies Status](https://david-dm.org/rajasegar/ember-stylish-buttons/dev-status.svg)](https://david-dm.org/rajasegar/ember-stylish-buttons?type=dev)
 [![EmberObserver](http://emberobserver.com/badges/ember-stylish-buttons.svg?branch=master)](http://emberobserver.com/addons/ember-stylish-buttons)
 
 
