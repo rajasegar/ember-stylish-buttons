@@ -3,7 +3,7 @@
         "name": "Ember Stylish Buttons",
         "description": "Some fresh styles & hover effects for the modern Ember button.",
         "url": "https://github.com/rajasegar/ember-stylish-buttons",
-        "version": "1.0.2.72a4e811"
+        "version": "1.0.2.43dbd5d0"
     },
     "files": {
         "addon/components/stylish-button.js": {
