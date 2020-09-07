@@ -2,6 +2,7 @@ import Controller from '@ember/controller';
 import {  action } from '@ember/object';
 import {  tracked } from '@glimmer/tracking';
 import { htmlSafe, w } from '@ember/string';
+import esbStyles from 'dummy/constants/esbStyles';
 
 const DEFAULT_STYLE = {
   border: null,
@@ -12,90 +13,18 @@ const DEFAULT_STYLE = {
   textWidth: null
 };
 
-const esbStyles = [
-  {
-    name: 'winona',
-    caption: 'Winona',
-    className: 'winona',
-    border: 'thin',
-    shape: 'round-s'
-  },
-  {
-    name: 'winona-pill',
-    caption: 'Winona Pill',
-    className: 'winona',
-    border: 'thick',
-    shape: 'round-l',
-    size: 's',
-    upperCase: true,
-    textWidth: 'thick'
-  },
-  {
-    name: 'winona-inverted',
-    caption: 'Winona Inverted',
-    className: 'winona',
-    border: 'thin',
-    inverted: true,
-    textWidth: 'thick'
-  },
-  {
-    name: 'ujarak',
-    caption: 'Ujarak',
-    className: 'ujarak',
-    border: 'thin',
-    textWidth: 'thick'
-  },
-  {
-    name: 'ujarak-pill',
-    caption: 'Ujarak Pill',
-    className: 'ujarak',
-    border: 'medium',
-    shape: 'round-s',
-    upperCase: true,
-    textWidth: 'thick'
-  },
-  {
-    name: 'ujarak-inverted',
-    caption: 'Ujarak Inverted',
-    className: 'ujarak',
-    border: 'thick',
-    size: 's',
-    upperCase: true,
-    inverted: true,
-    textWidth: 'thick'
-  },
-  {
-    name: 'wayra',
-    caption: 'Wayra',
-    className: 'wayra',
-    border: 'thick',
-    upperCase: true,
-    size: 's'
-  },
-  {
-    name: 'wayra-pill',
-    caption: 'Wayra-Pill',
-    className: 'wayra',
-    border: 'thin',
-    shape: 'round-s'
-  },
-  {
-    name: 'wayra-inverted',
-    caption: 'Wayra-Inverted',
-    className: 'wayra',
-    border: 'medium',
-    upperCase: true,
-    size: "s",
-    textWidth: "thick",
-    inverted: true
-  }
-];
 
-export default class PlaygroundController extends Controller{
+export default class PlaygroundController extends Controller {
   // buttonStyles: w('winona winona-pill winona-inverted ujarak wayra tamaya rayen pipaluk moema isi aylan saqui wapasha nuka antiman itzel naira quidel sacnite shikoba'),
 
-  @tracked
-  buttonStyle = { ...DEFAULT_STYLE, ...esbStyles[0]};
+  @tracked buttonStyle = { ...DEFAULT_STYLE, ...esbStyles[0]};
+
+  @tracked border = '';
+  @tracked shape = '';
+  @tracked upperCase = '';
+  @tracked inverted = '';
+  @tracked size = '';
+  @tracked textWidth = '';
 
   buttonStyles = esbStyles;
   borderOptions =  w('thin medium thick');

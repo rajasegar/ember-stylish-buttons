@@ -11,13 +11,13 @@
    ## Usage:
 
    ```hbs
-   \<StylishButton @type="winona" @border="thin" @shape="round-s"  @text="Open Project"/>
+   <StylishButton @type="winona" @border="thin" @shape="round-s"  @text="Open Project"/>
 
-   \<StylishButton @type="wayra" @border="thick" @upperCase=true @size="s" >Remove</StylishButton>
+   <StylishButton @type="wayra" @border="thick" @upperCase=true @size="s" >Remove</StylishButton>
 
-   \<StylishButton @type="isi" @textWidth="thick" @upperCase=true @size="s">
+   <StylishButton @type="isi" @textWidth="thick" @upperCase=true @size="s">
    <i class="button__icon icon icon-box"></i><span>Archive</span>
-   \</StylishButton>
+   </StylishButton>
    ```
 
    @public
