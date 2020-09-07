@@ -40,6 +40,15 @@ ember install ember-stylish-buttons
 </StylishButton>
 ```
 
+## Adding click events
+To attach an event handler to the `StylishButton` component, we can use the `on` modifier.
+Since Modifiers can also be applied to components, they are also passed forward and applied to the button element with `...attributes` as mentioned
+in the [guides](https://guides.emberjs.com/release/components/template-lifecycle-dom-and-modifiers/#toc_modifiers-and-attributes).
+
+```hbs
+<StylishButton @type="winona" @border="thin" @shape="round-s" @text="Open Project" {{on "click" this.updateValue }}/>
+```
+
 ## Properties
 
 The **stylish-button** component takes the following list of properties to modify the styles and apperance of the button.
