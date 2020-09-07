@@ -54,8 +54,8 @@
                     <li class="panel panel-default">
                         <div class="panel-heading" role="tab" id="sidebar-version-heading">
                             <h4 class="panel-title">
-                                <a role="button" href="https://github.com/rajasegar/ember-stylish-buttons/commits/v0.0.17" target="_blank">
-                                  Tag: v0.0.17
+                                <a role="button" href="https://github.com/rajasegar/ember-stylish-buttons/commits/027e7058" target="_blank">
+                                  Tag: 1.0.2.027e7058
                                 </a>
                             </h4>
                         </div>
@@ -116,13 +116,13 @@
    ## Usage:
 
    &#x60;&#x60;&#x60;hbs
-   \{{stylish-button type=&quot;winona&quot; border=&quot;thin&quot; shape=&quot;round-s&quot;  text=&quot;Open Project&quot;}}
+   \&lt;StylishButton @type=&quot;winona&quot; @border=&quot;thin&quot; @shape=&quot;round-s&quot;  @text=&quot;Open Project&quot;/&gt;
 
-   \{{#stylish-button type=&quot;wayra&quot; border=&quot;thick&quot; upperCase=true size=&quot;s&quot; }}Remove{{/stylish-button}}
+   \&lt;StylishButton @type=&quot;wayra&quot; @border=&quot;thick&quot; @upperCase=true @size=&quot;s&quot; &gt;Remove&lt;/StylishButton&gt;
 
-   \{{#stylish-button type=&quot;isi&quot; textWidth=&quot;thick&quot; upperCase=true size=&quot;s&quot;}}
+   \&lt;StylishButton @type=&quot;isi&quot; @textWidth=&quot;thick&quot; @upperCase=true @size=&quot;s&quot;&gt;
    &lt;i class=&quot;button__icon icon icon-box&quot;&gt;&lt;/i&gt;&lt;span&gt;Archive&lt;/span&gt;
-   \{{/stylish-button}}
+   \&lt;/StylishButton&gt;
    &#x60;&#x60;&#x60;
 
    @public
@@ -130,48 +130,10 @@
 
 */
 
-import Ember from &#x27;ember&#x27;;
-import layout from &#x27;../templates/components/stylish-button&#x27;;
+import Component from &#x27;@glimmer/component&#x27;;
 
-const  {
-  computed
-} = Ember;
+export default class StylishButton extends Component {
 
-export default Ember.Component.extend({
-  layout,
-  /**
-     Changing the tagName property to button to render a button element by default.
-
-     @public
-     @property tagName
-     @type String
-     @default &quot;button&quot;
-  */
-
-  tagName: &#x27;button&#x27;,
-
-  /**
-     Binding a default &quot;.button&quot; class for the button
-
-     @public
-     @property classNames
-     @type Array
-     @default &quot;[&#x27;button&#x27;]&quot;
-  */
-
-  classNames: [&#x27;button&#x27;],
-  classNameBindings: [
-    &#x27;buttonStyle&#x27;,
-    &#x27;buttonBorder&#x27;,
-    &#x27;buttonShape&#x27;,
-    &#x27;upperCase:button--text-upper&#x27;,
-    &#x27;inverted:button--inverted&#x27;,
-    &#x27;invertedAlt:button--inverted-alt&#x27;,
-    &#x27;buttonTextWidth&#x27;,
-    &#x27;buttonSize&#x27;,
-    &#x27;customClasses&#x27;
-  ],
-  attributeBindings: [&#x27;text:data-text&#x27;],
   /**
      buttonStyle computed property is derived from the **type** attribute
 
@@ -181,9 +143,10 @@ export default Ember.Component.extend({
      @return {String}
   */
 
-  buttonStyle: computed(&#x27;type&#x27;, function() {
-    return &#x60;button--${this.get(&#x27;type&#x27;)}&#x60;;
-  }),
+  get buttonStyle() {
+    return this.args.type ? &#x60;button--${this.args.type}&#x60; : &#x27;button--winona&#x27;;
+  }
+
   /**
      buttonBorder computed property is derived from the **border** attribute
 
@@ -192,9 +155,9 @@ export default Ember.Component.extend({
      @param {String} type
      @return {String}
   */
-  buttonBorder: computed(&#x27;border&#x27;, function() {
-    return &#x60;button--border-${this.get(&#x27;border&#x27;)}&#x60;;
-  }),
+  get buttonBorder() {
+    return &#x60;button--border-${this.args.border}&#x60;;
+  }
   /**
      buttonShape computed property is derived from the **shape** attribute
 
@@ -203,9 +166,9 @@ export default Ember.Component.extend({
      @param {String} type
      @return {String}
   */
-  buttonShape: computed(&#x27;shape&#x27;, function() {
-    return this.get(&#x27;shape&#x27;) ? &#x60;button--${this.get(&#x27;shape&#x27;)}&#x60; : &#x27;&#x27;;
-  }),
+  get buttonShape() {
+    return this.args.shape ? &#x60;button--${this.args.shape}&#x60; : &#x27;&#x27;;
+  }
   /**
      buttonSize computed property is derived from the **size** attribute
 
@@ -214,9 +177,9 @@ export default Ember.Component.extend({
      @param {String} type
      @return {String}
   */
-  buttonSize: computed(&#x27;size&#x27;, function() {
-    return this.get(&#x27;size&#x27;) ? &#x60;button--size-${this.get(&#x27;size&#x27;)}&#x60; : &#x27;&#x27;;
-  }),
+  get buttonSize() {
+    return this.args.size ? &#x60;button--size-${this.args.size}&#x60; : &#x27;&#x27;;
+  }
   /**
      buttonTextWidth computed property is derived from the **textWidth** attribute
 
@@ -225,23 +188,29 @@ export default Ember.Component.extend({
      @param {String} type
      @return {String}
   */
-  buttonTextWidth: computed(&#x27;textWidth&#x27;, function() {
-    return this.get(&#x27;textWidth&#x27;) ? &#x60;button--text-${this.get(&#x27;textWidth&#x27;)}&#x60; : &#x27;&#x27;;
-  }),
-  /**
-     click action for the button
-
-     Gets the action passed in the **action** attribute and call it with
-     whatever arguments passed 
-
-     @public
-     @method click
-  */
-  click() {
-    this.get(&#x27;action&#x27;)(...arguments);
+  get buttonTextWidth() {
+    return this.args.textWidth ? &#x60;button--text-${this.args.textWidth}&#x60; : &#x27;&#x27;;
   }
 
-});
+  get upperCase() {
+    return this.args.upperCase ? &#x27;button--text-upper&#x27; : &#x27;&#x27;;
+  }
+
+  get inverted() {
+    return this.args.inverted ? &#x27;button--inverted&#x27; : &#x27;&#x27;;
+  }
+
+  get invertedAlt() {
+    return this.args.invertedAlt ? &#x27;button--inverted-alt&#x27; : &#x27;&#x27;;
+  }
+
+  get className() {
+    return &#x60;button ${this.buttonStyle} ${this.buttonBorder} ${this.buttonShape}
+    ${this.buttonTextWidth} ${this.buttonSize} ${this.upperCase}
+    ${this.inverted} ${this.invertedAlt} ${this.args.customClasses}&#x60;;
+  }
+
+}
 
     </pre>
 </div>
